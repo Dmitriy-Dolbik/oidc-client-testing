@@ -8,7 +8,7 @@ quarkus:
       url: http://localhost:8080/protected
 
   oidc:
-#    auth-server-url: http://localhost:8180/realms/quarkus
+    #    auth-server-url: http://localhost:8180/realms/quarkus
     client-id: backend-service
     credentials:
       secret: secret
@@ -22,9 +22,10 @@ quarkus:
     client-id: ${quarkus.oidc.client-id}
     credentials:
       secret: ${quarkus.oidc.credentials.secret}
+    grant-options:
+      password:
+        username: alice
+        password: alice
     grant:
       type: password
-      options:
-        password:
-          username: alice
-          password: alice
+

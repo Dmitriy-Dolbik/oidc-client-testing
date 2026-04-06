@@ -51,11 +51,11 @@
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-arc</artifactId>
         </dependency>
-<!--        &lt;!&ndash; For be able to use application.yaml instead of .properties file &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>io.quarkus</groupId>-->
-<!--            <artifactId>quarkus-config-yaml</artifactId>-->
-<!--        </dependency>-->
+        <!-- For be able to use application.yaml instead of .properties file -->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-config-yaml</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
