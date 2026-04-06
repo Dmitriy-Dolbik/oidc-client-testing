@@ -1,0 +1,30 @@
+quarkus:
+  rest-client:
+    rest-client-with-oidc-client-filter:
+      url: http://localhost:8080/protected
+    rest-client-with-token-header-param:
+      url: http://localhost:8080/protected
+    rest-client-with-token-propagation-filter:
+      url: http://localhost:8080/protected
+
+  oidc:
+#    auth-server-url: http://localhost:8180/realms/quarkus
+    client-id: backend-service
+    credentials:
+      secret: secret
+
+  keycloak:
+    devservices:
+      realm-path: quarkus-realm.json
+
+  oidc-client:
+    auth-server-url: ${quarkus.oidc.auth-server-url}
+    client-id: ${quarkus.oidc.client-id}
+    credentials:
+      secret: ${quarkus.oidc.credentials.secret}
+    grant:
+      type: password
+      options:
+        password:
+          username: alice
+          password: alice
